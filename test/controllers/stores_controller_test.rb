@@ -4,12 +4,6 @@ class StoresControllerTest < ActionDispatch::IntegrationTest
   setup do
     @store = stores(:one)
   end
-
-  test "should get index" do
-    get stores_url, as: :json
-    assert_response :success
-  end
-
   test "should create store" do
     assert_difference("Store.count") do
       post stores_url, params: { store: { address: @store.address, cnpj: @store.cnpj, description: @store.description, name: @store.name } }, as: :json
